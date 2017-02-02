@@ -58,13 +58,14 @@ class Checking {
         }
         $result = [];
         foreach ($values as $key => $row) {
+            if (empty($row)) continue;
             $current = $this->dt->copy()->subMinute()->format($this->checkDatetimeFormat);
             $createdAt = Carbon::createFromFormat($this->formDatetimeFormat, $row[0])->format($this->checkDatetimeFormat);
             if ($current === $createdAt) {
                 $ouputDatetime = Carbon::createFromFormat($this->formDatetimeFormat, $row[0])->format($this->ouputDatetimeFormat);
                 array_push($result, (object)[
                     'created_at' => $ouputDatetime,
-                    'data' => json_encode(array_slice($row, 1), JSON_UNESCAPED_UNICODE),
+                    'data' => implode("\n　", array_slice($row, 1)),
                 ]);
             }
         }

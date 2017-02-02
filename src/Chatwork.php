@@ -13,7 +13,7 @@ class Chatwork
     // Chatwork room id
     protected $roomId = null;
     // Message to be sent
-    const MESSAGE = "※ Created at: %s\n%s\n";
+    const MESSAGE = "※ Created at: %s\n　%s\n";
 
     function __construct()
     {
@@ -31,7 +31,7 @@ class Chatwork
         if (empty($result)) {
             return "";
         }
-        $message = "[info][title]Recently Update [In minutes][/title]";
+        $message = "[info][title]Recently updated (F)[/title]";
         foreach ($result as $item) {
             $message .= sprintf(self::MESSAGE, $item->created_at, $item->data);
         }

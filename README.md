@@ -14,8 +14,8 @@ $ composer install
 ```
 
 - Edit your BOT information
-  - `credentials/chatwork.json` : Chatwork BOT access token and room ID
-  - `credentials/sheet_id.json` : Spreadsheet ID of form responses
+  - `credentials/chatwork.json` : Chatwork BOT access token and room ID number
+  - `credentials/sheet_id.json` : Spreadsheet ID of form responses (Example: `1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms`)
   - `credentials/client_secret.json` : Download from [Project](https://console.developers.google.com/start/api?id=sheets.googleapis.com) in the Google Developers Console
   - `credentials/sheets.googleapis.com.json` : Google credential path, you must run `$ php main.php` for first time to generate it
 
